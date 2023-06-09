@@ -48,3 +48,28 @@ void stampaMessaggio(byte messaggio[], int nByte) {
   Serial.print(" ");
   }
 }
+
+void stampaRisposta(int nByteResponse, int i){
+  
+    
+      if(i == 0){
+        Serial.print("Start: ");
+      }
+      if(i == 2){
+        Serial.print("\tCommand: ");
+      }
+      if(i == 4){
+        Serial.print("\tByteCount: ");
+      }
+      if(nByteResponse > 8 && i == 5){
+        Serial.print("\tData: ");
+      }
+      if(i == nByteResponse-3){
+        Serial.print("\tChecksum: ");
+      }
+      if(i == nByteResponse-2){
+        Serial.print("\tEnd: ");
+      }
+     
+}
+
